@@ -1,1 +1,35 @@
-cookieswapper
+# cookieswapper
+
+## Hosts
+
+Change your `/etc/hosts` file to have this:
+
+127.0.0.1       www.cookieswapper.com blog.cookieswapper.com
+
+
+## Run Forest Run!
+
+
+1. Start the blog server
+
+```
+gem install sinatra sinatra-contrib # yeah we are not going to use bundler for this
+
+ruby blog/app.rb
+```
+
+2. Open blog.cookieswapper.com:4567/ on your browser and make sure you see a cookie called AWS in your dev tools.
+
+3. Kill your blog app.
+
+4. Start your www server
+
+```
+ruby www/app.rb
+```
+
+5. Open www.cookieswapper.com:4567/ on your browser and make sure you see a cookie called AWS in your dev tools.
+
+
+## What happened?
+blog.* set the cookie which was sent to the www.* domain when you opened it next.
